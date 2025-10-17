@@ -1,0 +1,241 @@
+<mvc:View controllerName="My_first_Project.controller.Prod_year" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Page title="Production Orders - Year Wise" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<HBox class="sapUiSmallMargin">
+				<Label text="Select Year" class="sapUiSmallMarginEnd"/>
+				<Select id="yearSelect" width="150px" change="onFilterChange">
+					<items>
+						<core:Item key="2023" text="2023"/>
+						<core:Item key="2024" text="2024"/>
+						<core:Item key="2025" text="2025"/>
+					</items>
+				</Select>
+			</HBox>
+<Table id="prodYearTable" class="customProdTable"  inset="false" items="{/PRODUCTIONSet}">
+    <columns>
+        <Column><Text text="Order ID"/></Column>
+        <Column><Text text="Order Type"/></Column>
+        <Column><Text text="Order Category"/></Column>
+        <Column><Text text="Material No"/></Column>
+        <Column><Text text="Material Desc"/></Column>
+        <Column><Text text="Plant Code"/></Column>
+        <Column><Text text="Plant Name"/></Column>
+        <Column><Text text="Quantity"/></Column>
+        <Column><Text text="Unit"/></Column>
+        <Column><Text text="Start Date"/></Column>
+        <Column><Text text="End Date"/></Column>
+    </columns>
+    <ColumnListItem>
+        <cells>
+            <Text text="{OrderId}"/>
+            <Text text="{OrderType}"/>
+            <Text text="{OrderCategory}"/>
+            <Text text="{MaterialNo}"/>
+            <Text text="{MaterialDesc}"/>
+            <Text text="{PlantCode}"/>
+            <Text text="{PlantName}"/>
+            <Text text="{Quantity}"/>
+            <Text text="{Unit}"/>
+            <Text text="{path: 'Startdate', formatter: '.formatDate'}"/>
+            <Text text="{path: 'Enddate', formatter: '.formatDate'}"/>
+        </cells>
+    </ColumnListItem>
+</Table>
+		</content>
+	</Page>
+</mvc:View>
+
+
+
+
+
+
+
+<!--<mvc:View-->
+<!--    controllerName="Shopfloor.controller.Prod_year"-->
+<!--    xmlns:mvc="sap.ui.core.mvc"-->
+<!--    xmlns="sap.m"-->
+<!--    xmlns:core="sap.ui.core">-->
+<!--    <Page title="Production Orders - Year Wise" showNavButton="true" navButtonPress="onNavBack">-->
+<!--        <content>-->
+<!--            <HBox class="sapUiSmallMargin">-->
+<!--                <Label text="Select Year" class="sapUiSmallMarginEnd"/>-->
+<!--                <Select id="yearSelect" width="150px" change="onFilterChange">-->
+<!--                    <items>-->
+<!--                        <core:Item key="2023" text="2023"/>-->
+<!--                        <core:Item key="2024" text="2024"/>-->
+<!--                        <core:Item key="2025" text="2025"/>-->
+<!--                    </items>-->
+<!--                </Select>-->
+<!--            </HBox>-->
+<!--<Table id="prodYearTable" inset="false" items="{-->
+<!--        path: '/productionSet'-->
+<!--    }">-->
+<!--    <columns>-->
+<!--        <Column><Text text="Order ID"/></Column>-->
+<!--        <Column><Text text="Order Type"/></Column>-->
+<!--        <Column><Text text="Order Category"/></Column>-->
+<!--        <Column><Text text="Material No"/></Column>-->
+<!--        <Column><Text text="Material Desc"/></Column>-->
+<!--        <Column><Text text="Plant Code"/></Column>-->
+<!--        <Column><Text text="Plant Name"/></Column>-->
+<!--        <Column><Text text="Quantity"/></Column>-->
+<!--        <Column><Text text="Unit"/></Column>-->
+<!--        <Column><Text text="Start Date"/></Column>-->
+<!--        <Column><Text text="End Date"/></Column>-->
+<!--    </columns>-->
+<!--     Use this as the template -->
+<!--    <items>-->
+<!--        <ColumnListItem>-->
+<!--            <cells>-->
+<!--                <Text text="{OrderId}"/>-->
+<!--                <Text text="{OrderType}"/>-->
+<!--                <Text text="{OrderCategory}"/>-->
+<!--                <Text text="{MaterialNo}"/>-->
+<!--                <Text text="{MaterialDesc}"/>-->
+<!--                <Text text="{PlantCode}"/>-->
+<!--                <Text text="{PlantName}"/>-->
+<!--                <Text text="{Quantity}"/>-->
+<!--                <Text text="{Unit}"/>-->
+<!--                <Text text="{path: 'Startdate', formatter: '.formatDate'}"/>-->
+<!--                <Text text="{path: 'Enddate', formatter: '.formatDate'}"/>-->
+<!--            </cells>-->
+<!--        </ColumnListItem>-->
+<!--    </items>-->
+<!--</Table>-->
+<!--            <Table id="prodYearTable" inset="false">-->
+<!--    <columns>-->
+<!--        <Column><Text text="Order ID"/></Column>-->
+<!--        <Column><Text text="Order Type"/></Column>-->
+<!--        <Column><Text text="Order Category"/></Column>-->
+<!--        <Column><Text text="Material No"/></Column>-->
+<!--        <Column><Text text="Material Desc"/></Column>-->
+<!--        <Column><Text text="Plant Code"/></Column>-->
+<!--        <Column><Text text="Plant Name"/></Column>-->
+<!--        <Column><Text text="Quantity"/></Column>-->
+<!--        <Column><Text text="Unit"/></Column>-->
+<!--        <Column><Text text="Start Date"/></Column>-->
+<!--        <Column><Text text="End Date"/></Column>-->
+<!--    </columns>-->
+<!--    <items>-->
+<!--        <ColumnListItem>-->
+<!--            <cells>-->
+<!--                <Text text="{OrderId}"/>-->
+<!--                <Text text="{OrderType}"/>-->
+<!--                <Text text="{OrderCategory}"/>-->
+<!--                <Text text="{MaterialNo}"/>-->
+<!--                <Text text="{MaterialDesc}"/>-->
+<!--                <Text text="{PlantCode}"/>-->
+<!--                <Text text="{PlantName}"/>-->
+<!--                <Text text="{Quantity}"/>-->
+<!--                <Text text="{Unit}"/>-->
+<!--                <Text text="{path: 'Startdate', formatter: '.formatDate'}"/>-->
+<!--                <Text text="{path: 'Enddate', formatter: '.formatDate'}"/>-->
+<!--            </cells>-->
+<!--        </ColumnListItem>-->
+<!--    </items>-->
+<!--</Table>-->
+<!--        </content>-->
+<!--    </Page>-->
+<!--</mvc:View>-->
+<!--<mvc:View-->
+<!--    controllerName="Shopfloor.controller.Prod_year"-->
+<!--    xmlns:mvc="sap.ui.core.mvc"-->
+<!--    xmlns="sap.m"-->
+<!--    xmlns:f="sap.f"-->
+<!--    xmlns:layout="sap.ui.layout"-->
+<!--    xmlns:core="sap.ui.core">-->
+<!--    <Page title="Production Orders - Year Wise" showNavButton="true" navButtonPress="onNavBack"-->
+<!--          backgroundDesign="Transparent" class="sapUiResponsiveContentPadding">-->
+<!--        <content>-->
+<!-- Filter Section -->
+<!--            <f:Card class="sapUiSmallMarginBottom">-->
+<!--                <f:header>-->
+<!--                    <f:CardHeader title="Filter Options" subtitle="Select year to filter production orders" iconSrc="sap-icon://filter"/>-->
+<!--                </f:header>-->
+<!--                <f:content>-->
+<!--                    <HBox class="sapUiSmallMargin" alignItems="Center">-->
+<!--                        <Label text="Select Year" class="sapUiSmallMarginEnd"/>-->
+<!--                        <Select id="yearSelect" width="200px" change="onFilterChange" class="sapUiSmallMarginEnd">-->
+<!--                            <items>-->
+<!--                                <core:Item key="2023" text="2023"/>-->
+<!--                                <core:Item key="2024" text="2024"/>-->
+<!--                                <core:Item key="2025" text="2025"/>-->
+<!--                            </items>-->
+<!--                        </Select>-->
+<!--                       <ObjectStatus id="selectedYear" title="Selected Year" -->
+<!--              text="None" -->
+<!--              state="Information" -->
+<!--              icon="sap-icon://calendar"/>-->
+<!--                    </HBox>-->
+<!--                </f:content>-->
+<!--            </f:Card>-->
+<!-- Results Summary Card -->
+<!--            <f:Card class="sapUiSmallMarginBottom" visible="false" id="summaryCard">-->
+<!--                <f:header>-->
+<!--                    <f:CardHeader title="Results Summary" subtitle="Filtered production orders overview" iconSrc="sap-icon://chart"/>-->
+<!--                </f:header>-->
+<!--                <f:content>-->
+<!--                    <layout:Grid defaultSpan="XL4 L4 M6 S12" class="sapUiSmallMargin">-->
+<!--                       <layout:GridCell>-->
+<!--   <ObjectStatus id="totalOrders" title="Total Orders" -->
+<!--              text="0" -->
+<!--              state="Information" -->
+<!--              icon="sap-icon://order-status"/>-->
+<!--<ObjectStatus id="totalQuantity" title="Total Quantity" -->
+<!--              text="0" -->
+<!--              state="Success" -->
+<!--              icon="sap-icon://measure"/>-->
+<!--<ObjectStatus id="activeOrders" title="Active Orders" -->
+<!--              text="0" -->
+<!--              state="Success" -->
+<!--              icon="sap-icon://accept"/>-->
+<!--</layout:GridCell>-->
+<!--                    </layout:Grid>-->
+<!--                </f:content>-->
+<!--            </f:Card>-->
+<!-- Production Orders Table -->
+<!--            <f:Card class="sapUiSmallMarginBottom">-->
+<!--                <f:header>-->
+<!--                    <f:CardHeader title="Production Orders" subtitle="Filtered results by selected year" iconSrc="sap-icon://table-view"/>-->
+<!--                </f:header>-->
+<!--                <f:content>-->
+<!-- Use sap.m.Table explicitly -->
+<!--                    <Table id="prodYearTable" inset="false" items="{/productionSet}" -->
+<!--                           class="sapUiSmallMargin" sticky="ColumnHeaders">-->
+<!--                        <columns>-->
+<!--                            <Column><Label text="Order ID"/></Column>-->
+<!--                            <Column><Label text="Order Type"/></Column>-->
+<!--                            <Column><Label text="Order Category"/></Column>-->
+<!--                            <Column><Label text="Material No"/></Column>-->
+<!--                            <Column><Label text="Material Desc"/></Column>-->
+<!--                            <Column><Label text="Plant Code"/></Column>-->
+<!--                            <Column><Label text="Plant Name"/></Column>-->
+<!--                            <Column><Label text="Quantity"/></Column>-->
+<!--                            <Column><Label text="Unit"/></Column>-->
+<!--                            <Column><Label text="Start Date"/></Column>-->
+<!--                            <Column><Label text="End Date"/></Column>-->
+<!--                        </columns>-->
+<!--                        <items>-->
+<!--                            <ColumnListItem>-->
+<!--                                <cells>-->
+<!--                                    <Text text="{OrderId}"/>-->
+<!--                                    <Text text="{OrderType}"/>-->
+<!--                                    <Text text="{OrderCategory}"/>-->
+<!--                                    <Text text="{MaterialNo}"/>-->
+<!--                                    <Text text="{MaterialDesc}"/>-->
+<!--                                    <Text text="{PlantCode}"/>-->
+<!--                                    <Text text="{PlantName}"/>-->
+<!--                                    <Text text="{Quantity}"/>-->
+<!--                                    <Text text="{Unit}"/>-->
+<!--                                    <Text text="{path: 'Startdate', formatter: '.formatDate'}"/>-->
+<!--                                    <Text text="{path: 'Enddate', formatter: '.formatDate'}"/>-->
+<!--                                </cells>-->
+<!--                            </ColumnListItem>-->
+<!--                        </items>-->
+<!--                    </Table>-->
+<!--                </f:content>-->
+<!--            </f:Card>-->
+<!--        </content>-->
+<!--    </Page>-->
+<!--</mvc:View>-->

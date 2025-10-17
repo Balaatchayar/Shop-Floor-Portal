@@ -1,0 +1,72 @@
+<mvc:View
+    controllerName="My_first_Project.controller.Prod_month"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Page title="Production Order - Month Wise" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <HBox class="sapUiSmallMargin">
+                <Label text="Year" class="sapUiSmallMarginEnd"/>
+                <Select id="yearSelect" width="150px" change="onFilterChange">
+                    <items>
+                        <core:Item key="2023" text="2023"/>
+                        <core:Item key="2024" text="2024"/>
+                        <core:Item key="2025" text="2025"/>
+                    </items>
+                </Select>
+
+                <Label text="Month" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
+                <Select id="monthSelect" width="150px" change="onFilterChange">
+                    <items>
+                        <core:Item key="01" text="January"/>
+                        <core:Item key="02" text="February"/>
+                        <core:Item key="03" text="March"/>
+                        <core:Item key="04" text="April"/>
+                        <core:Item key="05" text="May"/>
+                        <core:Item key="06" text="June"/>
+                        <core:Item key="07" text="July"/>
+                        <core:Item key="08" text="August"/>
+                        <core:Item key="09" text="September"/>
+                        <core:Item key="10" text="October"/>
+                        <core:Item key="11" text="November"/>
+                        <core:Item key="12" text="December"/>
+                    </items>
+                </Select>
+            </HBox>
+
+            <Table id="prodMonthTable" class="customProdTable" inset="false" items="{/PRODUCTIONSet}">
+                <columns>
+                    <Column><Text text="Order ID"/></Column>
+                    <Column><Text text="Order Type"/></Column>
+                    <Column><Text text="Order Category"/></Column>
+                    <Column><Text text="Material No"/></Column>
+                    <Column><Text text="Material Desc"/></Column>
+                    <Column><Text text="Plant Code"/></Column>
+                    <Column><Text text="Plant Name"/></Column>
+                    <Column><Text text="Quantity"/></Column>
+                    <Column><Text text="Unit"/></Column>
+                    <Column><Text text="Start Date"/></Column>
+                    <Column><Text text="End Date"/></Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{OrderId}"/>
+                            <Text text="{OrderType}"/>
+                            <Text text="{OrderCategory}"/>
+                            <Text text="{MaterialNo}"/>
+                            <Text text="{MaterialDesc}"/>
+                            <Text text="{PlantCode}"/>
+                            <Text text="{PlantName}"/>
+                            <Text text="{Quantity}"/>
+                            <Text text="{Unit}"/>
+                            <Text text="{path: 'Startdate', formatter: '.formatDate'}"/>
+                            <Text text="{path: 'Enddate', formatter: '.formatDate'}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

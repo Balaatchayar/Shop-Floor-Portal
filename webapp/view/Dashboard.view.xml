@@ -1,0 +1,28 @@
+<mvc:View
+    controllerName="My_first_Project.controller.Dashboard"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true">
+
+    <Page title="Dashboard" class="customPage">
+        <content>
+            <VBox class="sapUiSmallMargin">
+                
+                <!-- Welcome text -->
+                <Text id="welcomeText" text="Welcome," class="sapUiSmallMarginBottom customWelcomeText"/>
+                
+                <!-- Plant Count -->
+                <Text id="plantCountValue" text="Number of plants assigned: 0" class="sapUiSmallMarginBottom customPlantCount"/>
+
+                <!-- Cards container -->
+                <FlexBox
+                    id="dashboardCards"
+                    wrap="Wrap"
+                    alignItems="Start"
+                    justifyContent="Start"
+                    class="sapUiSmallMargin sapUiResponsiveContentPadding customCardContainer"
+                    fitContainer="true"/>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

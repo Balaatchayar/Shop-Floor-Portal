@@ -1,0 +1,30 @@
+<mvc:View
+  controllerName="My_first_Project.controller.Login"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  displayBlock="true">
+
+  <Page id="loginPage" class="login-page" showHeader="false">
+    <content>
+      <VBox fitContainer="true" alignItems="Center" justifyContent="Center">
+
+        <!-- Login Card -->
+        <VBox class="login-card" alignItems="Center" justifyContent="Center">
+          <Image src="https://cdn-icons-png.freepik.com/512/10972/10972607.png"
+                 width="120px" height="120px"/>
+
+          <Title text="Login to Shop Floor Portal" level="H2"/>
+
+          <Input id="userId" placeholder="User ID" width="100%" type="Text" required="true"/>
+          <Input id="password" placeholder="Password" width="100%" type="Password" required="true"/>
+
+          <Button text="Login" type="Emphasized" press=".onLoginPress" width="100%"/>
+
+          <HBox class="login-actions" justifyContent="SpaceBetween" width="100%">
+          </HBox>
+        </VBox>
+
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

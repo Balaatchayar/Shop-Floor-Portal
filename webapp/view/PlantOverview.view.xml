@@ -1,0 +1,70 @@
+<mvc:View
+    controllerName="My_first_Project.controller.PlantOverview"
+    xmlns:mvc="sap/ui/core/mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:layout="sap.ui.layout">
+
+    <Page title="Plant Overview" showNavButton="true" navButtonPress="onNavBack" class="customPage">
+
+        <!-- Plant Info Panel -->
+        <Panel headerText="Plant Information" class="sapUiSmallMarginBottom customPanel">
+            <layout:Grid defaultSpan="XL3 L3 M6 S12" class="sapUiSmallMargin">
+                <layout:content>
+                    <VBox class="sapUiTinyMarginBottom">
+                        <Label text="Plant Code" design="Bold"/>
+                        <Text id="plantId" class="customValue"/>
+                    </VBox>
+                    <VBox class="sapUiTinyMarginBottom">
+                        <Label text="Plant Name" design="Bold"/>
+                        <Text id="plantName" class="customValue"/>
+                    </VBox>
+                    <VBox class="sapUiTinyMarginBottom">
+                        <Label text="Street" design="Bold"/>
+                        <Text id="plantStreet" class="customValue"/>
+                    </VBox>
+                    <VBox class="sapUiTinyMarginBottom">
+                        <Label text="City" design="Bold"/>
+                        <Text id="plantCity" class="customValue"/>
+                    </VBox>
+                    <VBox class="sapUiTinyMarginBottom">
+                        <Label text="Country" design="Bold"/>
+                        <Text id="plantCountry" class="customValue"/>
+                    </VBox>
+                    <VBox class="sapUiTinyMarginBottom">
+                        <Label text="Postal Code" design="Bold"/>
+                        <Text id="plantPostal" class="customValue"/>
+                    </VBox>
+                </layout:content>
+            </layout:Grid>
+        </Panel>
+
+        <!-- Order Management Tiles Panel -->
+        <Panel class="sapUiSmallMarginBottom customPanel orderPanel">
+            <headerToolbar>
+                <Toolbar class="customToolbar orderToolbar">
+                    <Title text="Order Management" class="customToolbarTitle orderTitle"/>
+                    <ToolbarSpacer/>
+                    <Button icon="sap-icon://refresh" press="onRefreshTiles" tooltip="Refresh Tiles" type="Transparent"/>
+                </Toolbar>
+            </headerToolbar>
+
+            <TileContainer id="overviewTiles" class="sapUiSmallMargin customTileContainer orderTiles" height="400px">
+                <!-- Tiles added dynamically by controller -->
+            </TileContainer>
+
+            <MessageStrip id="tileDebugInfo"
+                          text="Tiles are being loaded..."
+                          type="Information"
+                          showIcon="true"
+                          class="sapUiSmallMarginTop"/>
+
+            <VBox id="noTilesMessage" visible="false" class="sapUiSmallMarginTop">
+                <MessageStrip text="No overview tiles available. Please check your configuration."
+                              type="Warning"
+                              showIcon="true"/>
+            </VBox>
+        </Panel>
+
+    </Page>
+</mvc:View>

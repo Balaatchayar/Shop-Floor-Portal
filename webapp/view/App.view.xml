@@ -1,0 +1,11 @@
+<mvc:View
+    controllerName="My_first_Project.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <App id="app">
+        <pages>
+            <!-- Initial page for proper routing -->
+            <!--<Page id="initialPage" title="Loading..." />-->
+        </pages>
+    </App>
+</mvc:View>

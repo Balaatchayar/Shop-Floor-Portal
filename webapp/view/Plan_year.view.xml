@@ -1,0 +1,109 @@
+<mvc:View
+    controllerName="My_first_Project.controller.Plan_year"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true">
+
+    <Page title="Plan - Year View">
+        <content>
+
+            <!-- Year Filter Dropdown -->
+            <VBox class="sapUiSmallMargin">
+                <Label text="Select Year" />
+                <Select id="yearSelect" change=".onFilterChange">
+                    <items>
+                        <core:Item key="2023" text="2023" xmlns:core="sap.ui.core"/>
+                        <core:Item key="2024" text="2024" xmlns:core="sap.ui.core"/>
+                        <core:Item key="2025" text="2025" xmlns:core="sap.ui.core"/>
+                    </items>
+                </Select>
+            </VBox>
+
+            <!-- Table (no default binding, will be bound after filter selection) -->
+            <Table id="planYearTable" class="customProdTable" inset="false" items="{}">
+                <columns>
+                    <Column><Text text="Order No" /></Column>
+                    <Column><Text text="Material No" /></Column>
+                    <Column><Text text="Material Description" /></Column>
+                    <Column><Text text="Plant Code" /></Column>
+                    <Column><Text text="Plant Name" /></Column>
+                    <Column><Text text="Order Quantity" /></Column>
+                    <Column><Text text="Unit" /></Column>
+                    <Column><Text text="Start Date" /></Column>
+                    <Column><Text text="End Date" /></Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{OrderNo}" />
+                            <Text text="{MaterialNo}" />
+                            <Text text="{MaterialDesc}" />
+                            <Text text="{PlantCode}" />
+                            <Text text="{PlantName}" />
+                            <Text text="{OrderQuantity}" />
+                            <Text text="{Unit}" />
+                           <Text text="{path: 'StartDate', formatter: '.formatDate'}" />
+                            <Text text="{path: 'EndDate', formatter: '.formatDate'}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+        </content>
+    </Page>
+</mvc:View>
+
+<!--<mvc:View-->
+<!--    controllerName="Shopfloor.controller.Plan_year"-->
+<!--    xmlns:mvc="sap.ui.core.mvc"-->
+<!--    xmlns="sap.m"-->
+<!--    xmlns:core="sap.ui.core">-->
+
+<!--    <Page title="Planned Orders - Year Wise" showNavButton="true" navButtonPress="onNavBack">-->
+<!--        <content>-->
+<!--            <HBox class="sapUiSmallMargin">-->
+<!--                <Label text="Select Year" class="sapUiSmallMarginEnd"/>-->
+<!--                <Select id="yearSelect" width="150px" change="onFilterChange">-->
+<!--                    <items>-->
+<!--                        <core:Item key="2023" text="2023"/>-->
+<!--                        <core:Item key="2024" text="2024"/>-->
+<!--                        <core:Item key="2025" text="2025"/>-->
+<!--                    </items>-->
+<!--                </Select>-->
+<!--            </HBox>-->
+
+<!--            <Table id="planYearTable" inset="false">-->
+<!--    <columns>-->
+<!--        <Column><Text text="Order No"/></Column>-->
+<!--        <Column><Text text="Order Type"/></Column>-->
+<!--        <Column><Text text="Material No"/></Column>-->
+<!--        <Column><Text text="Material Desc"/></Column>-->
+<!--        <Column><Text text="Plant Code"/></Column>-->
+<!--        <Column><Text text="Plant Name"/></Column>-->
+<!--        <Column><Text text="Quantity"/></Column>-->
+<!--        <Column><Text text="Unit"/></Column>-->
+<!--        <Column><Text text="Start Date"/></Column>-->
+<!--        <Column><Text text="End Date"/></Column>-->
+<!--    </columns>-->
+<!--    <items>-->
+<!--        <ColumnListItem>-->
+<!--            <cells>-->
+<!--                <Text text="{OrderNo}"/>-->
+<!--                <Text text="{GroupCode}"/>-->
+<!--                <Text text="{MaterialNo}"/>-->
+<!--                <Text text="{MaterialDesc}"/>-->
+<!--                <Text text="{PlantCode}"/>-->
+<!--                <Text text="{PlantName}"/>-->
+<!--                <Text text="{OrderQuantity}"/>-->
+<!--                <Text text="{Unit}"/>-->
+<!--                <Text text="{path: 'StartDate', formatter: '.formatDate'}"/>-->
+<!--                <Text text="{path: 'EndDate', formatter: '.formatDate'}"/>-->
+<!--            </cells>-->
+<!--        </ColumnListItem>-->
+<!--    </items>-->
+<!--</Table>-->
+
+<!--        </content>-->
+<!--    </Page>-->
+<!--</mvc:View>-->

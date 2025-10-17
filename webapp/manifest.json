@@ -1,0 +1,134 @@
+{
+	"_version": "1.7.0",
+	"sap.app": {
+		"id": "My_first_Project",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"dataSources": {
+			"ZGRH_SF_ODATA_SRV": {
+				"uri": "/sap/opu/odata/sap/ZGRH_SF_ODATA_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "My_first_Project.view.App",
+			"type": "XML",
+			"async": true
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "My_first_Project.i18n.i18n"
+				}
+			},
+			"": {
+				"dataSource": "ZGRH_SF_ODATA_SRV",
+				"settings": {
+					"useBatch": false
+				}
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "My_first_Project.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"async": true
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "Login",
+				"target": "Login"
+			}, {
+				"pattern": "Dashboard/{UserId}",
+				"name": "Dashboard",
+				"target": "Dashboard"
+			}, {
+				"pattern": "PlantOverview/{PlantId}/{UserId}",
+				"name": "PlantOverview",
+				"target": "PlantOverview"
+			}, {
+				"pattern": "ProdYear/{PlantId}/{UserId}",
+				"name": "ProdYear",
+				"target": "ProdYear"
+			}, {
+				"pattern": "ProdMonth/{PlantId}/{UserId}",
+				"name": "ProdMonth",
+				"target": "ProdMonth"
+			}, {
+				"pattern": "PlanYear/{PlantId}/{UserId}",
+				"name": "PlanYear",
+				"target": "PlanYear"
+			}, {
+				"pattern": "PlanMonth/{PlantId}/{UserId}",
+				"name": "PlanMonth",
+				"target": "PlanMonth"
+			}
+			],
+			"targets": {
+				"Login": {
+					"viewName": "Login",
+					"viewLevel": 1
+				},
+				"Dashboard": {
+					"viewName": "Dashboard",
+					"viewLevel": 2
+				},
+				"PlantOverview": {
+					"viewName": "PlantOverview",
+					"viewLevel": 3
+				},
+				"ProdYear": {
+					"viewName": "Prod_year",
+					"viewLevel": 4
+				},
+				"ProdMonth": {
+					"viewName": "Prod_month",
+					"viewLevel": 4
+				},
+				"PlanYear": {
+					"viewName": "Plan_year",
+					"viewLevel": 4
+				},
+				"PlanMonth": {
+					"viewName": "Plan_month",
+					"viewLevel": 4
+				}
+			}
+		}
+	}
+}

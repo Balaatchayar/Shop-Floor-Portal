@@ -1,0 +1,215 @@
+<mvc:View
+    controllerName="My_first_Project.controller.Plan_month"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Page title="Planned Orders - Month Wise" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <HBox class="sapUiSmallMargin">
+                <Label text="Select Year" class="sapUiSmallMarginEnd"/>
+                <Select id="yearSelect" width="120px" change="onFilterChange">
+                    <items>
+                        <core:Item key="2023" text="2023"/>
+                        <core:Item key="2024" text="2024"/>
+                        <core:Item key="2025" text="2025"/>
+                    </items>
+                </Select>
+
+                <Label text="Select Month" class="sapUiSmallMarginEnd sapUiSmallMarginBegin"/>
+                <Select id="monthSelect" width="120px" change="onFilterChange">
+                    <items>
+                        <core:Item key="01" text="Jan"/>
+                        <core:Item key="02" text="Feb"/>
+                        <core:Item key="03" text="Mar"/>
+                        <core:Item key="04" text="Apr"/>
+                        <core:Item key="05" text="May"/>
+                        <core:Item key="06" text="Jun"/>
+                        <core:Item key="07" text="Jul"/>
+                        <core:Item key="08" text="Aug"/>
+                        <core:Item key="09" text="Sep"/>
+                        <core:Item key="10" text="Oct"/>
+                        <core:Item key="11" text="Nov"/>
+                        <core:Item key="12" text="Dec"/>
+                    </items>
+                </Select>
+            </HBox>
+
+            <Table id="planMonthTable" class="customProdTable" inset="false" items="{/d/results}">
+                <columns>
+                    <Column><Text text="Order No"/></Column>
+                    <Column><Text text="Order Type"/></Column>
+                    <Column><Text text="Material No"/></Column>
+                    <Column><Text text="Material Desc"/></Column>
+                    <Column><Text text="Plant Code"/></Column>
+                    <Column><Text text="Plant Name"/></Column>
+                    <Column><Text text="Quantity"/></Column>
+                    <Column><Text text="Unit"/></Column>
+                    <Column><Text text="Group Code"/></Column>
+                    <Column><Text text="Group name"/></Column>
+                    <Column><Text text="Start Date"/></Column>
+                    <Column><Text text="End Date"/></Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{OrderNo}"/>
+                            <Text text="{GroupCode}"/>
+                            <Text text="{MaterialNo}"/>
+                            <Text text="{MaterialDesc}"/>
+                            <Text text="{PlantCode}"/>
+                            <Text text="{PlantName}"/>
+                            <Text text="{OrderQuantity}"/>
+                            <Text text="{Unit}"/>
+                            <Text text="{GroupCode}"/>
+                            <Text text="{GroupName}"/>
+                            <Text text="{path: 'StartDate', formatter: '.formatDate'}"/>
+                            <Text text="{path: 'EndDate', formatter: '.formatDate'}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
+<!--<mvc:View-->
+<!--    controllerName="Shopfloor.controller.Plan_month"-->
+<!--    xmlns:mvc="sap.ui.core.mvc"-->
+<!--    xmlns="sap.m"-->
+<!--    xmlns:core="sap.ui.core">-->
+
+<!--    <Page title="Planned Orders - Month Wise" showNavButton="true" navButtonPress="onNavBack">-->
+<!--        <content>-->
+<!--            <HBox class="sapUiSmallMargin">-->
+<!--                <Label text="Select Year" class="sapUiSmallMarginEnd"/>-->
+<!--                <Select id="yearSelect" width="120px" change="onFilterChange">-->
+<!--                    <items>-->
+<!--                        <core:Item key="2023" text="2023"/>-->
+<!--                        <core:Item key="2024" text="2024"/>-->
+<!--                        <core:Item key="2025" text="2025"/>-->
+<!--                    </items>-->
+<!--                </Select>-->
+
+<!--                <Label text="Select Month" class="sapUiSmallMarginEnd sapUiSmallMarginBegin"/>-->
+<!--                <Select id="monthSelect" width="120px" change="onFilterChange">-->
+<!--                    <items>-->
+<!--                        <core:Item key="01" text="Jan"/>-->
+<!--                        <core:Item key="02" text="Feb"/>-->
+<!--                        <core:Item key="03" text="Mar"/>-->
+<!--                        <core:Item key="04" text="Apr"/>-->
+<!--                        <core:Item key="05" text="May"/>-->
+<!--                        <core:Item key="06" text="Jun"/>-->
+<!--                        <core:Item key="07" text="Jul"/>-->
+<!--                        <core:Item key="08" text="Aug"/>-->
+<!--                        <core:Item key="09" text="Sep"/>-->
+<!--                        <core:Item key="10" text="Oct"/>-->
+<!--                        <core:Item key="11" text="Nov"/>-->
+<!--                        <core:Item key="12" text="Dec"/>-->
+<!--                    </items>-->
+<!--                </Select>-->
+<!--            </HBox>-->
+
+<!--            <Table id="planMonthTable" inset="false">-->
+<!--                <columns>-->
+<!--                    <Column><Text text="Order No"/></Column>-->
+<!--                    <Column><Text text="Order Type"/></Column>-->
+<!--                    <Column><Text text="Material No"/></Column>-->
+<!--                    <Column><Text text="Material Desc"/></Column>-->
+<!--                    <Column><Text text="Plant Code"/></Column>-->
+<!--                    <Column><Text text="Plant Name"/></Column>-->
+<!--                    <Column><Text text="Quantity"/></Column>-->
+<!--                    <Column><Text text="Unit"/></Column>-->
+<!--                    <Column><Text text="Start Date"/></Column>-->
+<!--                    <Column><Text text="End Date"/></Column>-->
+<!--                </columns>-->
+
+<!--                <items>-->
+<!--                    <ColumnListItem>-->
+<!--                        <cells>-->
+<!--                            <Text text="{OrderNo}"/>-->
+<!--                            <Text text="{GroupCode}"/>-->
+<!--                            <Text text="{MaterialNo}"/>-->
+<!--                            <Text text="{MaterialDesc}"/>-->
+<!--                            <Text text="{PlantCode}"/>-->
+<!--                            <Text text="{PlantName}"/>-->
+<!--                            <Text text="{OrderQuantity}"/>-->
+<!--                            <Text text="{Unit}"/>-->
+<!--                            <Text text="{path: 'StartDate', formatter: '.formatDate'}"/>-->
+<!--                            <Text text="{path: 'EndDate', formatter: '.formatDate'}"/>-->
+<!--                        </cells>-->
+<!--                    </ColumnListItem>-->
+<!--                </items>-->
+<!--            </Table>-->
+
+<!--        </content>-->
+<!--    </Page>-->
+<!--</mvc:View>-->
+
+<!--<mvc:View controllerName="Shopfloor.controller.Plan_month" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core">-->
+<!--	<Page title="Planned Orders - Month Wise" showNavButton="true" navButtonPress="onNavBack">-->
+<!--		<content>-->
+<!--			<HBox class="sapUiSmallMargin">-->
+<!--				<Label text="Year" class="sapUiSmallMarginEnd"/>-->
+<!--				<Select id="yearSelect" width="150px" change="onFilterChange">-->
+<!--					<items>-->
+<!--						<core:Item key="2023" text="2023"/>-->
+<!--						<core:Item key="2024" text="2024"/>-->
+<!--						<core:Item key="2025" text="2025"/>-->
+<!--					</items>-->
+<!--				</Select>-->
+<!--				<Label text="Month" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>-->
+<!--				<Select id="monthSelect" width="150px" change="onFilterChange">-->
+<!--					<items>-->
+<!--						<core:Item key="01" text="January"/>-->
+<!--						<core:Item key="02" text="February"/>-->
+<!--						<core:Item key="03" text="March"/>-->
+<!--						<core:Item key="04" text="April"/>-->
+<!--						<core:Item key="05" text="May"/>-->
+<!--						<core:Item key="06" text="June"/>-->
+<!--						<core:Item key="07" text="July"/>-->
+<!--						<core:Item key="08" text="August"/>-->
+<!--						<core:Item key="09" text="September"/>-->
+<!--						<core:Item key="10" text="October"/>-->
+<!--						<core:Item key="11" text="November"/>-->
+<!--						<core:Item key="12" text="December"/>-->
+<!--					</items>-->
+<!--				</Select>-->
+<!--			</HBox>-->
+<!--			<Table id="planMonthTable" inset="false">-->
+<!--				<columns>-->
+<!--					<Column><Text text="Order No"/></Column>-->
+<!--					<Column><Text text="Order Type"/></Column>-->
+<!--					<Column><Text text="Material No"/></Column>-->
+<!--					<Column><Text text="Material Desc"/></Column>-->
+<!--					<Column><Text text="Plant Code"/></Column>-->
+<!--					<Column><Text text="Plant Name"/></Column>-->
+<!--					<Column><Text text="Quantity"/></Column>-->
+<!--					<Column><Text text="Unit"/></Column>-->
+<!--					<Column><Text text="GroupCode"/></Column>-->
+<!--					<Column><Text text="GroupName"/></Column>-->
+<!--					<Column><Text text="Start Date"/></Column>-->
+<!--					<Column><Text text="End Date"/></Column>-->
+<!--				</columns>-->
+<!--				<items>-->
+<!--					<ColumnListItem>-->
+<!--						<cells>-->
+<!--							<Text text="{OrderNo}"/>-->
+<!--							<Text text="{GroupCode}"/>-->
+<!--							<Text text="{MaterialNo}"/>-->
+<!--							<Text text="{MaterialDesc}"/>-->
+<!--							<Text text="{PlantCode}"/>-->
+<!--							<Text text="{PlantName}"/>-->
+<!--							<Text text="{OrderQuantity}"/>-->
+<!--							<Text text="{Unit}"/>-->
+<!--							<Text text="{GroupCode}"/>-->
+<!--							<Text text="{GroupName}"/>-->
+<!--							<Text text="{path: 'StartDate', formatter: '.formatDate'}"/>-->
+<!--							<Text text="{path: 'EndDate', formatter: '.formatDate'}"/>-->
+<!--						</cells>-->
+<!--					</ColumnListItem>-->
+<!--				</items>-->
+<!--			</Table>-->
+<!--		</content>-->
+<!--	</Page>-->
+<!--</mvc:View>-->
